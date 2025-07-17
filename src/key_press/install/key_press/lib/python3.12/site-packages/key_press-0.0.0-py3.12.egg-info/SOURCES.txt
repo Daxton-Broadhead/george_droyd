@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+build/key_press/key_press.egg-info/PKG-INFO
+build/key_press/key_press.egg-info/SOURCES.txt
+build/key_press/key_press.egg-info/dependency_links.txt
+build/key_press/key_press.egg-info/requires.txt
+build/key_press/key_press.egg-info/top_level.txt
+build/key_press/key_press.egg-info/zip-safe
+key_press/__init__.py
+key_press/keys.py
+key_press/sound.py
+resource/key_press
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py

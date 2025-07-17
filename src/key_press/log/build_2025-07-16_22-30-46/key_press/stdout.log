@@ -1,0 +1,39 @@
+running egg_info
+creating build/key_press/key_press.egg-info
+writing build/key_press/key_press.egg-info/PKG-INFO
+writing dependency_links to build/key_press/key_press.egg-info/dependency_links.txt
+writing requirements to build/key_press/key_press.egg-info/requires.txt
+writing top-level names to build/key_press/key_press.egg-info/top_level.txt
+writing manifest file 'build/key_press/key_press.egg-info/SOURCES.txt'
+reading manifest file 'build/key_press/key_press.egg-info/SOURCES.txt'
+writing manifest file 'build/key_press/key_press.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/daxton/simulation/ros2_ws/src/key_press/build/key_press/build
+creating /home/daxton/simulation/ros2_ws/src/key_press/build/key_press/build/lib
+creating /home/daxton/simulation/ros2_ws/src/key_press/build/key_press/build/lib/key_press
+copying key_press/keys.py -> /home/daxton/simulation/ros2_ws/src/key_press/build/key_press/build/lib/key_press
+copying key_press/sound.py -> /home/daxton/simulation/ros2_ws/src/key_press/build/key_press/build/lib/key_press
+copying key_press/__init__.py -> /home/daxton/simulation/ros2_ws/src/key_press/build/key_press/build/lib/key_press
+running install
+running install_lib
+creating /home/daxton/simulation/ros2_ws/src/key_press/install/key_press/lib/python3.12/site-packages/key_press
+copying /home/daxton/simulation/ros2_ws/src/key_press/build/key_press/build/lib/key_press/keys.py -> /home/daxton/simulation/ros2_ws/src/key_press/install/key_press/lib/python3.12/site-packages/key_press
+copying /home/daxton/simulation/ros2_ws/src/key_press/build/key_press/build/lib/key_press/sound.py -> /home/daxton/simulation/ros2_ws/src/key_press/install/key_press/lib/python3.12/site-packages/key_press
+copying /home/daxton/simulation/ros2_ws/src/key_press/build/key_press/build/lib/key_press/__init__.py -> /home/daxton/simulation/ros2_ws/src/key_press/install/key_press/lib/python3.12/site-packages/key_press
+byte-compiling /home/daxton/simulation/ros2_ws/src/key_press/install/key_press/lib/python3.12/site-packages/key_press/keys.py to keys.cpython-312.pyc
+byte-compiling /home/daxton/simulation/ros2_ws/src/key_press/install/key_press/lib/python3.12/site-packages/key_press/sound.py to sound.cpython-312.pyc
+byte-compiling /home/daxton/simulation/ros2_ws/src/key_press/install/key_press/lib/python3.12/site-packages/key_press/__init__.py to __init__.cpython-312.pyc
+running install_data
+creating /home/daxton/simulation/ros2_ws/src/key_press/install/key_press/share/ament_index
+creating /home/daxton/simulation/ros2_ws/src/key_press/install/key_press/share/ament_index/resource_index
+creating /home/daxton/simulation/ros2_ws/src/key_press/install/key_press/share/ament_index/resource_index/packages
+copying resource/key_press -> /home/daxton/simulation/ros2_ws/src/key_press/install/key_press/share/ament_index/resource_index/packages
+copying package.xml -> /home/daxton/simulation/ros2_ws/src/key_press/install/key_press/share/key_press
+creating /home/daxton/simulation/ros2_ws/src/key_press/install/key_press/share/key_press/key_press
+copying key_press/keys.py -> /home/daxton/simulation/ros2_ws/src/key_press/install/key_press/share/key_press/key_press
+copying key_press/sound.py -> /home/daxton/simulation/ros2_ws/src/key_press/install/key_press/share/key_press/key_press
+running install_egg_info
+Copying build/key_press/key_press.egg-info to /home/daxton/simulation/ros2_ws/src/key_press/install/key_press/lib/python3.12/site-packages/key_press-0.0.0-py3.12.egg-info
+running install_scripts
+writing list of installed files to '/home/daxton/simulation/ros2_ws/src/key_press/build/key_press/install.log'

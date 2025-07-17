@@ -1,0 +1,9 @@
+- topic_name: "/keyboard/keypress"
+  ros_type_name: "std_msgs/msg/Int32"
+  gz_type_name: "gz.msgs.Int32"
+  direction: GZ_TO_ROS
+
+- topic_name: "/rgbd_camera/image"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image"
+  direction: GZ_TO_ROS
