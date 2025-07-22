@@ -6,10 +6,13 @@ import os
 
 import sys
 import simpleaudio as sa
+import multiprocessing
 
-print("Current working directory:", os.getcwd())
-
-
+def playSound ():
+    script_path = os.path.abspath(__file__)
+    wave_obj = sa.WaveObject.from_wave_file("src/key_press/sounds/yeetSound.wav")
+    play_obj = wave_obj.play()
+    play_obj.wait_done()
 
 
 
@@ -24,7 +27,7 @@ class KeyPressListener(Node):
             self.listener_callback,   # Callback function
             10                        # QoS
         )
-        print(f"Python: {sys.executable}")
+        # print(f"Python: {sys.executable}")
 
     def listener_callback(self, msg):
         key = msg.data  # Normalize input
@@ -34,14 +37,14 @@ class KeyPressListener(Node):
             self.handle_n_press()
 
     def handle_n_press(self):
-        print('stuff is being done')
-        script_path = os.path.abspath(__file__)
+        
+        
         self.get_logger().info("Key 'n' was pressed! Doing something...")
-        # Do your action here (e.g., play sound)
-        wave_obj = sa.WaveObject.from_wave_file("src/key_press/sounds/yeetSound.wav")
-        wave_obj.play()
-        # play_obj = wave_obj.play()
-        # play_obj.wait_done()  # Wait until sound has finished playing
+
+        p = multiprocessing.Process(target=playSound)
+        p.start()
+        
+
 
 
 def main(args=None):
