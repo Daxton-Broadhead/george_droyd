@@ -2,6 +2,9 @@
 <sdf version="1.10">
     <world name="car_world">
 
+        <mesh>
+            <uri>file:///home/daxton/simulation/sdf_files/george_floyd/meshes/scene.gltf</uri>
+        </mesh>
 
         <!-- Moving Forward-->
         <plugin filename="gz-sim-triggered-publisher-system"
