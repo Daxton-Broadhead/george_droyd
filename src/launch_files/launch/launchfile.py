@@ -55,7 +55,7 @@ def generate_launch_description():
     ))
 
     ld.add_action(ExecuteProcess(
-        cmd=['gz', 'sim', 'sdf_files/building_robot.sdf'],
+        cmd=['gz', 'sim', 'src/sim_files/sdf/building_robot.sdf'],
         output='screen'
     ))
 

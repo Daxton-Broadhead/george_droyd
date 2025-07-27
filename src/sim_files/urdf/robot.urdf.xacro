@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+    <robot xmlns:xacro="http://ros.org/wiki/xacro" name="practice_creation">
+
+        <link name="world"></link>
+
+        <joint name="world_to_base" type="fixed">
+            <parent link="world"></parent>
+            <child link="base"></child>
+            <origin xyz="0 0 3" rpy="0 0 0"></origin>
+        </joint>
+
+        <link name="base">
+            <visual>
+                <origin xyz="0 0.25 0" rpy="1.57 0.075 0"/>
+
+                <geometry>
+                    <!-- <box size="1 1 1"></box> -->
+                    <mesh filename="package://sim_files/meshes/pentagon_shape.stl" scale="0.015 0.015 0.1"/>
+                </geometry>
+            </visual>
+
+            <collision>
+                <geometry>
+                    <box size="1 1 1"></box>
+                </geometry>
+            </collision>
+
+            <inertial>  <!-- These inirtial values are stupid, replace them with something actually real eventually-->
+                <mass value="10.0"/>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <inertia
+                ixx="0.1" ixy="0.0" ixz="0.0"
+                iyy="0.1" iyz="0.0"
+                izz="0.1"/>
+            </inertial>
+        </link>
+
+        <!-- This is George's head -->
+
+        <joint name="base_to_head" type="fixed">
+            <origin xyz="0 0 1"></origin>
+            <parent link="base"></parent>
+            <child link="george_head"></child>
+        </joint>
+
+        <link name="george_head">
+            <geometry>
+                <mesh filename="package://sim_files/meshes/george_floyd.glb" scale="1 1 1"></mesh>
+            </geometry>
+
+            <inertial>  <!-- These inirtial values are stupid, replace them with something actually real eventually-->
+                <mass value="10.0"/>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <inertia
+                ixx="0.1" ixy="0.0" ixz="0.0"
+                iyy="0.1" iyz="0.0"
+                izz="0.1"/>
+            </inertial>
+        </link>
+
+        <!-- This is the right arm -->
+        <joint name="base_to_shoulder1" type="revolute">
+            <parent link="base"></parent>
+            <child link="shoulder1"></child>
+            <limit lower="-1.57" upper="1.57" effort="10" velocity="1.0"/>
+            <origin xyz="0.72 0 0.23" rpy="0 1.57 0"></origin>
+            <axis xyz="0 1 0"/>
+
+        </joint>
+
+        <link name="shoulder1">
+            <visual>
+                <origin xyz="0 0 0.1" rpy="0 0 0"></origin>
+                <geometry>
+                    <cylinder radius="0.3" length="0.2"></cylinder>
+                </geometry>
+                
+            </visual>
+            
+            <inertial> 
+                <mass value="10.0"/>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <inertia
+                ixx="0.1" ixy="0.0" ixz="0.0"
+                iyy="0.1" iyz="0.0"
+                izz="0.1"/>
+            
+            </inertial>
+        </link>
+
+
+        <joint name="base_to_shoulder2" type="revolute">
+            <parent link="base"></parent>
+            <child link="shoulder2"></child>
+            <limit lower="-1.57" upper="1.57" effort="10" velocity="1.0"/>
+            <origin xyz="-0.72 0 0.23" rpy="0 1.57 0"></origin>
+            <axis xyz="0 1 0"/>
+
+        </joint>
+
+        <link name="shoulder2">
+            <visual>
+                <origin xyz="0 0 -0.1" rpy="0 0 0"></origin>
+                <geometry>
+                    <cylinder radius="0.3" length="0.2"></cylinder>
+                </geometry>
+                
+            </visual>
+
+            <inertial>  <!-- These inirtial values are stupid, replace them with something actually real eventually-->
+                <mass value="10.0"/>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <inertia
+                ixx="0.1" ixy="0.0" ixz="0.0"
+                iyy="0.1" iyz="0.0"
+                izz="0.1"/>
+            </inertial>
+        </link>
+
+        <joint name="shoulder1_to_upper_arm1" type="revolute">
+            <origin xyz="0 0 0.2" rpy="0 0 0"></origin>
+            <parent link="shoulder1"></parent>
+            <child link="upper_arm1"></child>
+            <axis xyz="0 0 1"></axis>
+            <limit lower="-1.57" upper="1.57" effort="10" velocity="1.0"/>
+        </joint>
+
+        <link name="upper_arm1">
+            <visual>
+                <origin xyz="0.3 0 0.2" rpy="0 1.57 0"></origin>
+                <geometry>
+                    <cylinder radius="0.2" length="1"></cylinder>
+                </geometry>
+            </visual>
+
+            <inertial>  <!-- These inirtial values are stupid, replace them with something actually real eventually-->
+                <mass value="10.0"/>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <inertia
+                ixx="0.1" ixy="0.0" ixz="0.0"
+                iyy="0.1" iyz="0.0"
+                izz="0.1"/>
+            </inertial>
+        </link>
+
+        <joint name="upper_arm1_to_lower_arm1" type="revolute">
+            <origin xyz="0.8 0 0.2"></origin>
+            <parent link="upper_arm1"></parent>
+            <child link="lower_arm1"></child>
+            <axis xyz="0 0 1"></axis>
+            <limit lower="-1.57" upper="1.57" effort="10" velocity="1.0"/>
+        </joint>
+
+        <link name="lower_arm1">
+            <visual>
+                <origin xyz="0.7 0 0" rpy="0 1.57 0"></origin>
+                <geometry>
+                    <cylinder radius="0.2" length="1"></cylinder>
+                </geometry>
+            </visual>
+
+            <inertial>  <!-- These inirtial values are stupid, replace them with something actually real eventually-->
+                <mass value="10.0"/>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <inertia
+                ixx="0.1" ixy="0.0" ixz="0.0"
+                iyy="0.1" iyz="0.0"
+                izz="0.1"/>
+            </inertial>
+        </link>
+        <!-- end of right arm description-->
+
+        <!-- Right leg description -->
+
+        <joint name="right_hip_to_base" type="revolute">
+            <origin xyz="0.3 0 -0.65"></origin>
+            <parent link="base"></parent>
+            <child link="right_hip"></child>
+            <axis xyz="0 1 0"></axis>
+            <limit lower="-1.57" upper="1.57" effort="10" velocity="1.0"/>
+        </joint>
+
+        <link name="right_hip">
+            <visual>
+                <origin xyz="0 0 -0.1" rpy="0 0 0"></origin>
+                <geometry>
+                    <cylinder radius="0.25" length="0.2"></cylinder>
+                </geometry>
+            </visual>
+
+            <inertial>  <!-- These inirtial values are stupid, replace them with something actually real eventually-->
+                <mass value="10.0"/>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <inertia
+                ixx="0.1" ixy="0.0" ixz="0.0"
+                iyy="0.1" iyz="0.0"
+                izz="0.1"/>
+            </inertial>
+        </link>
+
+        <joint name="hip_to_upper_right_leg" type="revolute">
+            <origin xyz="0 0 -0.2"></origin>
+            <parent link="right_hip"></parent>
+            <child link="upper_right_leg"></child>
+            <axis xyz="1 0 0"></axis>
+            <limit lower="-1.57" upper="1.57" effort="10" velocity="1.0"/>
+        </joint>
+
+        <link name="upper_right_leg" type="revolute">
+            <visual>
+                <origin xyz="0 0 -0.3"></origin>
+                <geometry>
+                    <cylinder radius="0.2" length="0.6"></cylinder>
+                </geometry> 
+            </visual>
+
+            <inertial>  <!-- These inirtial values are stupid, replace them with something actually real eventually-->
+                <mass value="10.0"/>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <inertia
+                ixx="0.1" ixy="0.0" ixz="0.0"
+                iyy="0.1" iyz="0.0"
+                izz="0.1"/>
+            </inertial>
+        </link>
+
+        <joint name="upper_right_leg_to_lower_right_leg" type="revolute">
+            <origin xyz="0 0 -0.6"></origin>
+            <parent link="upper_right_leg"></parent>
+            <child link="lower_right_leg"></child>
+            <axis xyz="1 0 0"></axis>
+            <limit lower="-1.57" upper="1.57" effort="10" velocity="1.0"/>
+        </joint>
+
+        <link name="lower_right_leg">
+            <visual>
+                <origin xyz="0 0 -0.25"></origin>
+                <geometry>
+                    <cylinder radius="0.2" length="0.5"></cylinder>
+                </geometry>
+            </visual>
+
+            <inertial>  <!-- These inirtial values are stupid, replace them with something actually real eventually-->
+                <mass value="10.0"/>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <inertia
+                ixx="0.1" ixy="0.0" ixz="0.0"
+                iyy="0.1" iyz="0.0"
+                izz="0.1"/>
+            </inertial>
+        </link>
+    </robot>
+
+    
