@@ -15,7 +15,7 @@
 
                 <geometry>
                     <!-- <box size="1 1 1"></box> -->
-                    <mesh filename="package://sim_files/meshes/pentagon_shape.stl" scale="0.015 0.015 0.1"/>
+                    <mesh filename="~/simulation/ros2_ws/src/sim_files/meshes/pentagon_shape.stl" scale="0.015 0.015 0.1"/>
                 </geometry>
             </visual>
 
@@ -45,10 +45,10 @@
 
         <link name="george_head">
             <geometry>
-                <mesh filename="package://sim_files/meshes/george_floyd.glb" scale="1 1 1"></mesh>
+                <mesh filename="~/simulation/ros2_ws/src/sim_files/meshes/george_floyd.glb" scale="1 1 1"></mesh>
             </geometry>
 
-            <inertial>  <!-- These inirtial values are stupid, replace them with something actually real eventually-->
+            <inertial>  
                 <mass value="10.0"/>
                 <origin xyz="0 0 0" rpy="0 0 0"/>
                 <inertia

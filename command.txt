@@ -1,0 +1,2 @@
+ros2 run ros_gz_sim create -file ~/simulation/ros2_ws/src/sim_files/urdf/robot.urdf.xacro
+export GZ_SIM_RESOURCE_PATH=:/home/daxton/simulation/ros2_ws/install/sim_files/share/sim_files
